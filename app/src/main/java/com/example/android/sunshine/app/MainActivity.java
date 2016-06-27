@@ -77,10 +77,19 @@ public class MainActivity extends ActionBarActivity {
                     Arrays.asList(forecastArray)
             );
 
-            ArrayAdapter<String> mForecastAdapter = new ArrayAdapter<String>(this.getActivity(),
-                    R.layout.list_item_forecast,R.id.list_item_forecast_textview,weekForecast);
+            ArrayAdapter<String> mForecastAdapter = new ArrayAdapter<String>(
+                    //THE CURRENT CONTEXT (THIS FRAGMENT'S PARENT ACTIVITY
+                    this.getActivity(),
+                    //ID OF LIST ITEM LAYOUT
+                    R.layout.list_item_forecast,
+                    //ID OF THE TEXTVIEW WE WANT TO POPULATE
+                    R.id.list_item_forecast_textview,
+                    //FORECAST DATA
+                    weekForecast);
 
+            //CREATING LISTVIEW HIERARCHY AND SETTING IT TO A VIEW WITH AN ID ALREADY
             ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
+            //BIND THE ADAPTER TO THE LISTVIEW
             listView.setAdapter(mForecastAdapter);
 
             return rootView;
