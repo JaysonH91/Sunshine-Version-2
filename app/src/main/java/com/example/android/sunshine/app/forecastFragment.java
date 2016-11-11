@@ -249,6 +249,7 @@ public class ForecastFragment extends Fragment {
             }
             //return (urls[0]);
             System.out.println(forecastJsonStr);
+            Log.v(LOG_TAG, "Forecast JSON String: " + forecastJsonStr );
             //return forecastJsonStr;
             return null;
         }
